@@ -12,10 +12,15 @@ import SwiftUI
 struct LoginScreen: View {
     
     @Environment(\.dismiss) var dismiss
+    
     @State var willMoveToSignUpScreen = false
+    @State var willLandOnHomeScreen = false
     
     @State var userEmail = ""
     @State var userPassword = ""
+    
+    @State var toastMessage = ""
+    @State var showToast = false
 
     var body: some View {
         
@@ -91,8 +96,7 @@ struct LoginScreen: View {
                     .padding(.top, 24)
                 
 
-            TextField("Enter your text here", text: $userEmail)
-                .padding(.vertical, 12)
+            TextField("", text: $userEmail)
             
             if(userEmail.isEmpty) {
                 Divider()
@@ -105,8 +109,8 @@ struct LoginScreen: View {
                     .padding(.top, 24)
                 
 
-            TextField("Password", text: $userPassword)
-                .padding(.vertical, 12)
+            TextField("", text: $userPassword)
+    
             
             if(userPassword.isEmpty) {
                 Divider()
@@ -116,7 +120,31 @@ struct LoginScreen: View {
             Spacer()
             
         
-            Button("Login", action: { })
+            Button("Login", action: {
+                let email = UserDefaults.standard.string(forKey: StorageKeys.userEmail.rawValue) ?? ""
+                let password = UserDefaults.standard.string(forKey: StorageKeys.userPassword.rawValue) ?? ""
+                print("UserName : \(email)\n")
+                print("Password : \(password)")
+                
+                
+                if(userEmail.isEmpty  || userEmail != email) {
+                    toastMessage = "Email is not found"
+                    showToastWithDelay()
+                    return
+                }
+                
+                if(userPassword.isEmpty || userPassword != password ) {
+                    toastMessage = "Password is not found"
+                    showToastWithDelay()
+                }
+                
+                if(!showToast) {
+                    toastMessage = "Logged in Successfully"
+                    showToastWithDelay()
+                    willLandOnHomeScreen = true
+                }
+                
+            })
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 16)
                 .background(Color(hex: "F3F6F6"))
@@ -136,8 +164,21 @@ struct LoginScreen: View {
         }.padding()
             .frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .topLeading)
             .navigate(to: SignUpScreen(), when: $willMoveToSignUpScreen)
+            .navigate(to: HomeScreen(), when: $willLandOnHomeScreen)
+            .overlay {
+                Toast(message: toastMessage)
+                    .opacity(showToast ? 1 : 0)
+                    .frame(maxHeight: .infinity, alignment: .bottom)
+            }
         
         
+    }
+    
+    private func showToastWithDelay() {
+        showToast = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            showToast = false
+        }
     }
     
 }
