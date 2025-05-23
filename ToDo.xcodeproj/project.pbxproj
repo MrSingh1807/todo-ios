@@ -73,15 +73,11 @@
 		};
 		BD5172362D9BED8500243C04 /* ToDoTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = ToDoTests;
 			sourceTree = "<group>";
 		};
 		BD5172402D9BED8500243C04 /* ToDoUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = ToDoUITests;
 			sourceTree = "<group>";
 		};
@@ -127,7 +123,6 @@
 				BDBF76BDDDEAE1261D597DD4 /* Pods-ToDoUITests.debug.xcconfig */,
 				36523B021A965621852B5733 /* Pods-ToDoUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

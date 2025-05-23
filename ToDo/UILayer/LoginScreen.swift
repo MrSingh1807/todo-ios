@@ -52,23 +52,44 @@ struct LoginScreen: View {
                 Button(action: {
                     print("Facebook tapped!")
                 }) {
-                    Image("fb_round")
+                    Image("fb_logo")
                         .resizable()
-                        .frame(width: 48, height: 48)
+                        .frame(width: 24, height: 24)
+                        .padding()
+                        .clipShape(Circle())
+                        .overlay(
+                            Circle()
+                                .stroke(Color.black, lineWidth: 1)
+                        )
+                    
                 }
                 Button(action: {
                     print("Google tapped!")
                 }) {
-                    Image("google_round")
+                    Image("google_logo")
                         .resizable()
-                        .frame(width: 48, height: 48)
+                        .frame(width: 24, height: 24)
+                        .padding()
+                        .clipShape(Circle())
+                        .overlay(
+                            Circle()
+                                .stroke(Color.black, lineWidth: 1)
+                        )
                 }
                 Button(action: {
                     print("Apple tapped!")
                 }) {
-                    Image("apple_round")
+                    Image("apple_logo")
+                        .renderingMode(.template)
                         .resizable()
-                        .frame(width: 48, height: 48)
+                        .frame(width: 24, height: 28)
+                        .padding()
+                        .foregroundColor(.black) // Tint color
+                        .clipShape(Circle())
+                        .overlay(
+                            Circle()
+                                .stroke(Color.black, lineWidth: 1)
+                        )
                 }
                 
             }.frame(maxWidth: .infinity, alignment: .center)
@@ -104,7 +125,7 @@ struct LoginScreen: View {
                     .frame(height: 1)
             }
             
-            Text("Your email")
+            Text("Your password")
                     .foregroundColor(Color(hex: "24786D"))
                     .padding(.top, 24)
                 
