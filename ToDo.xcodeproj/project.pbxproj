@@ -11,6 +11,7 @@
 		BD5172532D9BF08B00243C04 /* Caros.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD5172502D9BF08A00243C04 /* Caros.otf */; };
 		BD5172542D9BF08B00243C04 /* Caros Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD5172522D9BF08A00243C04 /* Caros Medium.otf */; };
 		BD5172552D9BF08B00243C04 /* Caros Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD5172512D9BF08A00243C04 /* Caros Bold.otf */; };
+		BD699BF32DE22A4600D7E042 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = BD699BF22DE22A4600D7E042 /* SQLite */; };
 		FC77FC4917AF308E0B4DFEB9 /* Pods_ToDo_ToDoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 361D423B4021B1680C90F195 /* Pods_ToDo_ToDoUITests.framework */; };
 		FF6EBDE11D517B0CA529A594 /* Pods_ToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D349162F5F72B115A18FA153 /* Pods_ToDo.framework */; };
 /* End PBXBuildFile section */
@@ -88,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD699BF32DE22A4600D7E042 /* SQLite in Frameworks */,
 				FF6EBDE11D517B0CA529A594 /* Pods_ToDo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +265,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				BDAFF5652D9C52B30088D82D /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+				BD699BF12DE22A4600D7E042 /* XCRemoteSwiftPackageReference "SQLite" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BD5172272D9BED8300243C04 /* Products */;
@@ -699,6 +702,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BD699BF12DE22A4600D7E042 /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.15.3;
+			};
+		};
 		BDAFF5652D9C52B30088D82D /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
@@ -708,6 +719,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BD699BF22DE22A4600D7E042 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD699BF12DE22A4600D7E042 /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BD51721E2D9BED8300243C04 /* Project object */;
 }

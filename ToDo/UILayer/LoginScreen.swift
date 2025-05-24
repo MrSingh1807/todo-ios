@@ -36,7 +36,7 @@ struct LoginScreen: View {
             }
             
             
-            Text("Log in to Todo App")
+            Text("Log in EasyNote")
                 .font(.custom("Caros Medium", size: 18))
                 .frame(maxWidth: .infinity, alignment: .center)
                 .padding(.top, 40)

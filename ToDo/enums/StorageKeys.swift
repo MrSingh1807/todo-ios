@@ -11,4 +11,5 @@ enum StorageKeys: String {
     case UserName
     case userEmail
     case userPassword
+    case age
 }

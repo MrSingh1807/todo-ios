@@ -13,7 +13,6 @@ struct HomeScreen: View {
     let userName = UserDefaults.standard.string(forKey: StorageKeys.UserName.rawValue) ?? ""
     
     
-    
     @State var willMoveToSignUpScreen = false
     @State var willMoveToLogInScreen = false
     
@@ -28,17 +27,19 @@ struct HomeScreen: View {
                             .resizable()
                             .frame(width: 18, height: 18)
                         
-                        Text("Chatbox")
+                        Text("Easy Note")
                             .font(.custom("Caros", size: 14))
                             .foregroundColor(Color.white)
                     }.frame(width: .infinity, alignment: .center)
                         .padding(.top, 80)
                     
-                    Text("Connect friends easily & quickly")
-                        .font(.custom("Caros Bold", size : 68))
+                    Text("Manage Notes easily & quickly")
+                        .font(.custom("Caros Bold", size : 70))
                         .foregroundColor(Color.white)
+                        .frame(width: .infinity, alignment: .topLeading)
                         .lineSpacing(10)
-                    Text("Our chat app is the perfect way to stay connected with friends and family.")
+                    
+                    Text("Our notes app is the perfect way to manage daily tasks, ideas and more.")
                         .font(.custom("Caros Bold", size : 16))
                         .foregroundColor(Color(hex: "B9C1BE"))
                         .lineSpacing(4)
@@ -132,7 +133,7 @@ struct HomeScreen: View {
                     }.padding(.bottom, 40)
                 }
                 .frame(maxWidth: .infinity, maxHeight:.infinity, alignment: .leading)
-                .padding(.horizontal, 24)
+                .padding(.horizontal, 16)
                 
             }
             
